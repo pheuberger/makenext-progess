@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var pkg = require('./package.json');
+var sass = require('gulp-sass')
 
 // Copy third party libraries from /node_modules into /vendor
 gulp.task('vendor', function() {
@@ -22,8 +23,25 @@ gulp.task('vendor', function() {
 
 })
 
+gulp.task('styles', function() {
+    gulp.src('sass/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./stylesheets/'))
+
+    gulp.src([
+        './node_modules/font-awesome/css/*'
+      ])
+      .pipe(gulp.dest('./stylesheets/font-awesome/css'))
+
+
+    gulp.src([
+        './node_modules/font-awesome/fonts/*'
+      ])
+      .pipe(gulp.dest('./stylesheets/font-awesome/fonts'))
+});
+
 // Default task
-gulp.task('default', ['vendor']);
+gulp.task('default', ['vendor', 'styles']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -36,6 +54,7 @@ gulp.task('browserSync', function() {
 
 // Dev task
 gulp.task('dev', ['browserSync'], function() {
-  gulp.watch('./css/*.css', browserSync.reload);
+  gulp.watch('./stylesheets/*.css', browserSync.reload);
   gulp.watch('./*.html', browserSync.reload);
+  gulp.watch('sass/**/*.scss',['styles']);
 });

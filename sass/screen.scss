@@ -1,0 +1,143 @@
+// https://color.adobe.com/create/color-wheel/?base=3&rule=Analogous&selected=2&name=My%20Color%20Theme&mode=rgb&rgbvalues=0.9598039215686275,0.853563300775425,0.3456803054925757,0.9998039215686274,0.45337202827007317,0.4204033424273269,0.5687785428686558,0.9998039215686274,0.7317679170651878,0.43137254901960786,0.42745098039215684,0.9098039215686274,0.9598039215686275,0.8335384250905685,0.2731962368627631&swatchOrder=0,1,2,3,4
+
+// Variables
+$textColor: #444;
+$dateColor: #888;
+$lineColor: #eee;
+$dotColor: #91FFBB;
+$iconColor: #6E6DE8;
+$linkColor: #eee;
+$linkActiveColor: #FF746B;
+
+// Mixins
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// Styles
+body {
+  padding-top: 48px;
+  font-family: 'Raleway', sans-serif;
+}
+@media (min-width: 992px) {
+  body {
+    //padding-top: 96px;
+  }
+}
+.headline {
+  font-size: 2em;
+  font-weight: 500;
+}
+.large-type {
+  font-size: 4em;
+}
+.vertical {
+  width: 4px;
+  background-color: $lineColor;
+  margin: 0 auto 0 auto;
+  flex: auto;
+  min-height: 56px;
+  @include border-radius(2px);
+}
+.row .vertical {
+  flex: unset;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: $dotColor;
+  margin: 8px auto 8px auto;
+  @include border-radius(100%);
+}
+
+/* Items */
+.content-box {
+  padding: 0 16px 64px 0px;
+
+  div {
+    margin-bottom: 8px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+%fa-icon {
+  font-family: FontAwesome;
+  color: $iconColor;
+  font-size: 1.5em;
+}
+.comment {
+  font-size: 1.2em;
+  color: $textColor;
+  position: relative;
+  margin-top: -.1em;
+}
+.date {
+  color: $dateColor;
+  font-size: 1em;
+}
+.video {
+}
+.files {
+  a {
+    margin: 0 16px 0 24px;
+    font-weight: 500;
+    color: $textColor;
+    border-bottom-width: 3px;
+    border-color: $linkColor;
+    border-bottom-style: solid;
+    position:relative;
+
+    &:hover {
+      border-color: $linkActiveColor;
+      text-decoration: none;
+    }
+    &:before {
+      @extend %fa-icon;
+      content: "\f15b";
+      font-size: 1.2em;
+      left: -1.2em;
+      top: -.2em;
+      position: absolute;
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+
+/* Simply a mix of bootstrap's .row and .justify-content-center */
+.entry {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+}
+.left {
+  text-align: right;
+  width: 45%;
+  margin-right: 16px;
+}
+.right {
+  text-align: left;
+  width: 45%;
+  margin-left: 16px;
+}
+.middle {
+  width: 4%;
+  display: flex;
+  flex-direction: column;
+}
+.timeline {
+  margin-top: 64px;
+  margin-bottom: 256px;
+}

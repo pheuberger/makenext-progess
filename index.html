@@ -8,96 +8,77 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Bare - Start Bootstrap Template</title>
+    <title>Timeline</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <style>
-      body {
-        padding-top: 54px;
-      }
-      @media (min-width: 992px) {
-        body {
-          padding-top: 56px;
-        }
-      }
-      .large-type {
-        font-size: 24pt;
-      }
-      .vertical {
-        width: 4px;
-        background-color: blue;
-        margin: 0 auto 0 auto;
-        flex: auto;
-        min-height: 48px;
-      }
-      .row > .vertical {
-        flex: unset;
-      }
-      .dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 100%;
-        background-color: blue;
-        margin: 8px auto 8px auto;
-      }
-      .comment {
-        padding-bottom: 24px;
-      }
-      .date {
-        padding-bottom: 24px;
-      }
-      .left {
-        text-align: right;
-        width: 48%;
-      }
-      .right {
-        text-align: left;
-        width: 48%
-      }
-      .timeline {
-        width: 4%;
-        display: flex;
-        flex-direction: column;
-      }
-    </style>
-
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <!-- Web Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway:400,500" rel="stylesheet">
   </head>
 
   <body>
     <!-- Page Content -->
     <div class="container">
+      <div class="row">
+        <div class="headline">
+          timeline⇢
+        </div>
+      </div>
+      <div class="row">
+        <i class="fa fa-file-pdf"></i>
+      </div>
+    </div>
+    <div class="container timeline">
       <div class="row justify-content-center">
         <div class="text-center large-type">🥚</div>
       </div>
       <div class="row justify-content-center">
         <div class="vertical"></div>
       </div>
-      <div class="row justify-content-center">
+      <div class="entry">
         <div class="date left">04/02/2018</div>
-        <div class="timeline">
-          <div class="dot"></div>
-          <div class="vertical"></div>
+        <div class="middle"><div class="dot"></div><div class="vertical"></div></div>
+        <div class="content-box right">
+          <div class="comment">
+            Check out these files. They were created in a total rush and I don't know what I'm doing.
+          </div>
+          <div class="files"><a href="#">very-important.pdf</a><a href="#">presentation.keynote</a></div>
         </div>
-        <div class="comment right">lolerskates<br/>this is insane!</div>
       </div>
-      <div class="row justify-content-center">
-        <div class="comment left">You wouldn't believe how much stuff I achieved! Endless possibilities of this thing here and that other thing over there.</div>
-        <div class="timeline">
-          <div class="dot"></div>
-          <div class="vertical"></div>
+      <div class="entry">
+        <div class="content-box left">
+          <div class="comment">You wouldn't believe how much stuff I achieved! Endless possibilities of this thing here and that other thing over there.</div>
         </div>
+        <div class="middle"><div class="dot"></div><div class="vertical"></div></div>
         <div class="date right">04/10/2018</div>
       </div>
-      <div class="row justify-content-center">
+      <div class="entry">
         <div class="date left">04/12/2018</div>
-        <div class="timeline">
-          <div class="dot"></div>
-          <div class="vertical"></div>
+        <div class="middle"><div class="dot"></div><div class="vertical"></div></div>
+        <div class="content-box right">
+          <div class="video"><iframe width="480" height="360" src="https://www.youtube.com/embed/26gw0rgmpfE" frame="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
         </div>
-        <div class="right"><iframe width="560" height="315" src="https://www.youtube.com/embed/26gw0rgmpfE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+      </div>
+      <div class="entry">
+        <div class="content-box left">
+          <div class="comment">
+            Another draft. This time much better and much much thorougherer!
+          </div>
+          <div class="files"><a href="#">draft.pdf</a></div>
+        </div>
+        <div class="middle"><div class="dot"></div><div class="vertical"></div></div>
+        <div class="date right">04/12/2018</div>
+      </div>
+      <div class="entry">
+        <div class="date left">04/22/2018</div>
+        <div class="middle"><div class="dot"></div><div class="vertical"></div></div>
+        <div class="content-box right">
+          <div class="comment">Oneliner.</div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="large-type">👨🏻‍💻</div>
       </div>
     </div>
 
