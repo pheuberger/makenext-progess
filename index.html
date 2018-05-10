@@ -8,21 +8,22 @@
     <meta name="description" content="See the progress of a project on a timeline.">
     <meta name="author" content="lowestdefinition">
 
-    <title>Timeline</title>
+    <title>makenext.io Timeline</title>
 
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="stylesheets/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <!-- Web Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway:400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway:400,500|PT+Mono" rel="stylesheet">
   </head>
 
   <body>
     <!-- Page Content -->
     <div class="container">
       <div class="row">
-        <div class="headline">
-          timeline⇢
+        <div class="col-12 headline">
+          <h2>makenext.io progress</h2>
+          <p>Follow the journey. From start to ... well, where it's at right now 🤷‍♂️</p>
         </div>
       </div>
       <div class="row">
@@ -30,8 +31,9 @@
       </div>
     </div>
     <div class="container timeline">
-      <div class="row justify-content-center">
+      <div id="start" class="row justify-content-center">
         <div class="text-center large-type">🥚</div>
+        <a href="#end">Down</a>
       </div>
       <div class="row justify-content-center">
         <div class="vertical"></div>
@@ -41,14 +43,14 @@
         <div class="middle"><div class="dot"></div><div class="vertical"></div></div>
         <div class="content-box right">
           <div class="comment">
-            Check out these files. They were created in a total rush and I don't know what I'm doing.
+            This is like `git init`, just without git...
           </div>
-          <div class="files"><a href="#">very-important.pdf</a><a href="#">presentation.keynote</a></div>
+          <div class="files"><a href="#">very-important.pdf</a><a href="#">visual-prototype.keynote</a></div>
         </div>
       </div>
       <div class="entry">
         <div class="content-box left">
-          <div class="comment">You wouldn't believe how much stuff I achieved! Endless possibilities of this thing here and that other thing over there.</div>
+          <div class="comment">I talked to this very important person at this very relevant company and we agreed to talk some more ⚡️</div>
         </div>
         <div class="middle"><div class="dot"></div><div class="vertical"></div></div>
         <div class="date right">04/10/2018</div>
@@ -77,15 +79,25 @@
           <div class="comment">Oneliner.</div>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="large-type">👨🏻‍💻</div>
+      <div id="end" class="row justify-content-center">
+        <span class="large-type">👨🏻‍💻</span>
+        <a href="#start">Up</a>
       </div>
     </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 made-by">
+              made by <a target="_blank" href="https://twitter.com/lowestdef">@lowestdefinition</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    <script src="scripts/main.js"></script>
   </body>
 
 </html>

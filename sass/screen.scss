@@ -27,9 +27,49 @@ body {
     //padding-top: 96px;
   }
 }
-.headline {
-  font-size: 2em;
-  font-weight: 500;
+a {
+  font-family: "PT Mono", monospace;
+  color: $textColor;
+  border-bottom-width: 3px;
+  border-color: $linkColor;
+  border-bottom-style: solid;
+
+  &:hover {
+    border-color: $linkActiveColor;
+    text-decoration: none;
+    color: $textColor;
+  }
+}
+.headline{
+  position: relative;
+
+  p {
+    font-size: 1em;
+  }
+  a {
+    position: absolute;
+    right: 0;
+  }
+}
+%nav-link {
+  position: absolute;
+  top: 32px;
+  right: -24px;
+  // font-size: .8em;
+}
+#end {
+  position: relative;
+
+  a {
+    @extend %nav-link;
+  }
+}
+#start {
+  position: relative;
+
+  a {
+    @extend %nav-link;
+  }
 }
 .large-type {
   font-size: 4em;
@@ -85,17 +125,8 @@ body {
 .files {
   a {
     margin: 0 16px 0 24px;
-    font-weight: 500;
-    color: $textColor;
-    border-bottom-width: 3px;
-    border-color: $linkColor;
-    border-bottom-style: solid;
     position:relative;
 
-    &:hover {
-      border-color: $linkActiveColor;
-      text-decoration: none;
-    }
     &:before {
       @extend %fa-icon;
       content: "\f15b";
@@ -140,4 +171,26 @@ body {
 .timeline {
   margin-top: 64px;
   margin-bottom: 256px;
+}
+.made-by {
+  text-align: right;
+  padding-bottom: 24px;
+
+  a {
+    position: relative;
+    margin-left: 4px;
+
+    &:after {
+      content: "";
+      background-image: url("../img/self32.gif");
+      background-size: contain;
+      @include border-radius(100%);
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      top: -8px;
+      right: -40px;
+    }
+  }
 }
