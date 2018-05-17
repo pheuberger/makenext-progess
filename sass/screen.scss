@@ -8,6 +8,8 @@ $dotColor: #91FFBB;
 $iconColor: #6E6DE8;
 $linkColor: #eee;
 $linkActiveColor: #FF746B;
+$shadowColor: #f4f4f4;
+$imageWidth: 160px;
 
 // Mixins
 @mixin border-radius($radius) {
@@ -17,11 +19,30 @@ $linkActiveColor: #FF746B;
           border-radius: $radius;
 }
 
+@mixin shadow($vert_offset, $blur_radius, $spread_radius) {
+  -moz-box-shadow:    0 $vert_offset $blur_radius $spread_radius $shadowColor;
+  -webkit-box-shadow: 0 $vert_offset $blur_radius $spread_radius $shadowColor;
+  box-shadow:         0 $vert_offset $blur_radius $spread_radius $shadowColor;
+}
+
+// Extensions
+%thumbnail {
+  @include shadow(2px, 4px, 2px)
+  @include border-radius(4px)
+  width: $imageWidth;
+}
+%fa-icon {
+  font-family: FontAwesome;
+  color: $iconColor;
+  font-size: 1.5em;
+}
+
+
 // Styles
 body {
   padding-top: 48px;
   font-family: 'Raleway', sans-serif;
-  color: %$textColor;
+  color: $textColor;
 }
 @media (min-width: 992px) {
   body {
@@ -76,20 +97,32 @@ a {
     }
   }
 }
-%fa-icon {
-  font-family: FontAwesome;
-  color: $iconColor;
-  font-size: 1.5em;
-}
 .comment {
   position: relative;
   margin-top: -.1em;
+  text-align: justify;
 }
 .date {
   color: $dateColor;
   font-size: 1em;
 }
+
 .video {
+  img {
+    @extend %thumbnail;
+  }
+  a {
+    position: relative;
+
+    &:before {
+      @extend %fa-icon;
+      content: "\f144";
+      font-size: 1.5em;
+      left: 45%;
+      top: 25%;
+      position: absolute;
+    }
+  }
 }
 .files {
   a {
@@ -107,6 +140,11 @@ a {
     &:last-of-type {
       margin-right: 0;
     }
+  }
+}
+.images {
+  img {
+    @extend %thumbnail;
   }
 }
 
