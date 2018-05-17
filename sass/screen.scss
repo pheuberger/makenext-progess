@@ -1,4 +1,5 @@
 // https://color.adobe.com/create/color-wheel/?base=3&rule=Analogous&selected=2&name=My%20Color%20Theme&mode=rgb&rgbvalues=0.9598039215686275,0.853563300775425,0.3456803054925757,0.9998039215686274,0.45337202827007317,0.4204033424273269,0.5687785428686558,0.9998039215686274,0.7317679170651878,0.43137254901960786,0.42745098039215684,0.9098039215686274,0.9598039215686275,0.8335384250905685,0.2731962368627631&swatchOrder=0,1,2,3,4
+@import "node_modules/bootstrap/scss/bootstrap";
 
 // Variables
 $textColor: #444;
@@ -10,6 +11,11 @@ $linkColor: #eee;
 $linkActiveColor: #FF746B;
 $shadowColor: #f4f4f4;
 $imageWidth: 160px;
+
+// Bootstrap overrides
+$theme-colors: (
+  "primary": #6E6DE8
+);
 
 // Mixins
 @mixin border-radius($radius) {
@@ -186,7 +192,7 @@ a {
 }
 .timeline {
   margin-top: 64px;
-  margin-bottom: 256px;
+  margin-bottom: 128px;
 }
 .made-by {
   text-align: right;
@@ -208,5 +214,47 @@ a {
       top: -8px;
       right: -40px;
     }
+  }
+}
+.outline {
+  p {
+    margin-bottom: 8px;
+  }
+}
+
+// Signup Form
+.indicates-required {
+  font-size: .8em;
+}
+.asterisk {
+  color: red;
+  font-size: 1.4em;
+}
+.input-fields {
+  margin-top: 24px;
+}
+label {
+  margin-right: 16px;
+}
+input[type="email"], input[type="text"] {
+  border-radius: 8px;
+  border-style: none;
+  background-color: #eee;
+  padding: 0 16px 0 16px;
+  height: 40px;
+  margin: 0 0 16px 0;
+}
+input[type="email"] {
+  width: 65%;
+}
+input [type="text"] {
+  width: 60%
+}
+#mc_embed_signup {
+  margin-top: 128px;
+  font-size: 1em;
+
+  h2 {
+    font-size: 1.25em;
   }
 }
